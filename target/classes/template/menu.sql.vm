@@ -1,0 +1,42 @@
+-- 菜单SQL
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('${comments}管理', 0, 0, '','',1,'M',0,0,'','#',1,'',1,NOW(),1,NOW(),'');
+
+-- 按钮父菜单ID
+set @parentId = @@identity;
+
+-- 菜单对应按钮SQL
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('${comments}分页', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:list','#',1,'',1,NOW(),1,NOW(),'');
+set @listId = @@identity;
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('添加${comments}', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:add','#',1,'',1,NOW(),1,NOW(),'');
+set @addId = @@identity;
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('删除${comments}', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:del','#',1,'',1,NOW(),1,NOW(),'');
+set @delId = @@identity;
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('修改${comments}', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:update','#',1,'',1,NOW(),1,NOW(),'');
+set @updateId = @@identity;
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('查询${comments}', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:detail','#',1,'',1,NOW(),1,NOW(),'');
+set @detailId = @@identity;
+
+INSERT INTO `sys_menu` (`menu_name`,`parent_id`, `order_num`,`path`,`component`,`is_frame`,`menu_type`,`visible`,
+    `status`, `perms`, `icon`, `source_type`, `group_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`)
+    VALUES ('${comments}启停', @parentId, 0, '','',1,'F',0,0,'${moduleName}:${className}:enable','#',1,'',1,NOW(),1,NOW(),'');
+set @enableId = @@identity;
+
+-- 添加权限
+insert into sys_role_menu (role_id,menu_id) VALUES (2,@parentId),(2,@listId),(2,@addId),(2,@updateId),(2,@detailId),(2,@delId)

@@ -1,0 +1,26 @@
+package ${package}.${moduleName}.domain.dto;
+
+    #if(${hasBigDecimal})
+import java.math.BigDecimal;
+    #end
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
+
+/**
+ * @author ${author}
+ * @date ${datetime}
+ * @description ${comments} 查询类
+ */
+@Data
+public class ${className}QueryDto implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    #foreach ($column in $columns)
+    /**
+    * $column.comments
+     */
+    private $column.attrType $column.attrname;
+    #end
+
+}

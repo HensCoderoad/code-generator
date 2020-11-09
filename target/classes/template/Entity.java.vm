@@ -1,0 +1,34 @@
+package ${package}.${moduleName}.domain;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+    #if(${hasBigDecimal})
+    import java.math.BigDecimal;
+    #end
+import java.io.Serializable;
+import java.util.Date;
+
+import lombok.Data;
+
+/**
+ * @author ${author}
+ * @date ${datetime}
+ * @description ${comments}
+ */
+@Data
+public class ${className} implements Serializable{
+
+private static final long serialVersionUID=1L;
+
+#foreach ($column in $columns)
+	/**
+ 	* $column.comments
+ 	*/
+    #if($column.columnName == $pk.columnName)
+    @TableId(value = "$column.columnName", type = IdType.AUTO)
+    #end
+	private $column.attrType $column.attrname;
+#end
+
+}

@@ -1,0 +1,68 @@
+package ${package}.${moduleName}.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${mainPath}.common.utils.PageUtils;
+import ${package}.${moduleName}.entity.${className}Entity;
+
+import java.util.Map;
+
+/**
+ * ${comments}
+ * @author ${author}
+ * @date ${datetime}
+ * @description ${comments} 实现类
+ */
+public interface ${className}Service extends I${className}Service {
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description ${comments} 分页
+     * body
+    **/
+    TableDataInfo queryList(RequestModel<${className}QueryDto> body);
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description ${comments} 添加
+     * body
+     **/
+    AjaxResult add${className}(RequestModel<${className}AddDto> body);
+
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description ${comments} 删除
+     * @param parameter
+     **/
+    AjaxResult del${className}(Long parameter);
+
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description ${comments} 更新
+     * @param parameter
+     **/
+    AjaxResult update${className}(${className}UpdateDto parameter);
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description 查询${comments}
+     * @param parameter
+     **/
+    AjaxResult ${className}Detail(Long parameter);
+
+    /**
+     * @author ${author}
+     * @date ${datetime}
+     * @description ${comments} 启停
+     * @param parameter isenable 0:不启用，1：启用
+     **/
+    AjaxResult ${className}Enable(${className}EnableDto parameter);
+
+}
+

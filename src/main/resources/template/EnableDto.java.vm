@@ -1,0 +1,39 @@
+package ${package}.${moduleName}.domain.dto;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+    #if(${hasBigDecimal})
+    import java.math.BigDecimal;
+    #end
+import java.io.Serializable;
+import java.util.Date;
+
+import lombok.Data;
+
+/**
+ * @author ${author}
+ * @date ${datetime}
+ * @description ${comments} 启停类
+ */
+@Data
+public class ${className}EnableDto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+#foreach ($column in $columns)
+    #if($column.columnName == $pk.columnName)
+   /**
+    * $column.comments
+    */
+    @NotNull(message = "$column.comments 不能为空")
+    private $column.attrType $column.attrname;
+    #end
+#end
+    /**
+     * 是否启用 0:不启用，1：启用
+     */
+    @NotNull(message = "启用状态不能为空")
+    private Integer isEnable;
+
+}

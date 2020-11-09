@@ -1,0 +1,48 @@
+server:
+  port: 8082
+
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    url: jdbc:mysql://139.9.221.242:3306/ms_base?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT
+    username: root
+    password: q1w2e3
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    #oracle配置
+#        driverClassName: oracle.jdbc.OracleDriver
+#        url: jdbc:oracle:thin:@192.168.10.10:1521:xe
+#        username: root
+#        password: 123456
+#    #SQLServer配置
+#        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#        url: jdbc:sqlserver://192.168.10.10:1433;DatabaseName=marketing_generator
+#        username: sa
+#        password: 123456
+#    #PostgreSQL配置
+#      driverClassName: org.postgresql.Driver
+#      url: jdbc:postgresql://192.168.10.10:5432/marketing_generator
+#      username: root
+#      password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+
+
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+
+
+pagehelper:
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+#指定数据库，可选值有【mysql、oracle、sqlserver、postgresql】
+generator:
+  database: mysql
+

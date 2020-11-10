@@ -59,7 +59,7 @@ public class ${className}ServiceImpl implements I${className}Service {
         queryWrapper.eq("del_flag", new Integer(0));
         #foreach ($column in $columns)
             #if($column.columnName == $pk.columnName)
-            queryWrapper.eq("$column.columnName", body.get$column.attrName());
+            queryWrapper.eq("$column.columnName", body.get$column.columnName());
             #end
         #end
         ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);

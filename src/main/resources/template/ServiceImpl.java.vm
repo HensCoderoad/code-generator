@@ -8,7 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 import ${package}.${moduleName}.mapper.${className}Mapper;
 import ${package}.${moduleName}.domain.${className};
 import ${package}.${moduleName}.service.I${className}Service;
-
+import ${package}.${moduleName}.domain.${className};
+import  ${package}.${moduleName}.domain.dto.${className}.${className}AddDto;
+import  ${package}.${moduleName}.domain.dto.${className}.${className}EnableDto;
+import  ${package}.${moduleName}.domain.dto.${className}.${className}QueryDto;
+import  ${package}.${moduleName}.domain.dto.${className}.${className}UpdateDto;
 /**
  * ${comments}
  * @author ${author}
@@ -59,7 +63,7 @@ public class ${className}ServiceImpl implements I${className}Service {
         queryWrapper.eq("del_flag", new Integer(0));
         #foreach ($column in $columns)
             #if($column.columnName == $pk.columnName)
-            queryWrapper.eq("$column.columnName", body.get$column.attrName());
+            queryWrapper.eq("$column.columnName", body.get$column.columnName());
             #end
         #end
         ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);
@@ -102,7 +106,7 @@ public class ${className}ServiceImpl implements I${className}Service {
         queryWrapper.eq("del_flag", new Integer(0));
         #foreach ($column in $columns)
             #if($column.columnName == $pk.columnName)
-                queryWrapper.eq("$column.columnName", body.get$column.attrName());
+                queryWrapper.eq("$column.columnName", body.get$column.columnName());
             #end
         #end
         ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);

@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2398b88d-9cbf-4afe-be94-dc64dd24bcec" name="Default Changelist" comment="" />
+    <list default="true" id="2398b88d-9cbf-4afe-be94-dc64dd24bcec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generator.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/AddDto.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/AddDto.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Controller.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Dao.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Dao.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Entity.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Entity.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/ListVo.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/ListVo.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/QueryDto.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/QueryDto.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Service.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Service.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/ServiceImpl.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/ServiceImpl.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/UpdateDto.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/UpdateDto.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/Vo.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/template/Vo.java.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/code/CodeGeneratorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/code/CodeGeneratorApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -44,10 +59,47 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../github/movie_recommendation_system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="settings.editor.selected.configurable" value="Csv.Editor.Settings" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\project\other\code-generator\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.CodeGeneratorApplication">
+    <configuration name="CodeGeneratorApplicationTests.readDir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="code-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.code" />
+      <option name="MAIN_CLASS_NAME" value="com.code.CodeGeneratorApplicationTests" />
+      <option name="METHOD_NAME" value="readDir" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeGeneratorApplicationTests.testConvert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="code-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.code" />
+      <option name="MAIN_CLASS_NAME" value="com.code.CodeGeneratorApplicationTests" />
+      <option name="METHOD_NAME" value="testConvert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CodeGeneratorApplicationTests.timeStamp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="code-generator" />
       <extension name="coverage">
@@ -74,6 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CodeGeneratorApplicationTests.testConvert" />
+        <item itemvalue="JUnit.CodeGeneratorApplicationTests.readDir" />
         <item itemvalue="JUnit.CodeGeneratorApplicationTests.timeStamp" />
       </list>
     </recent_temporary>
@@ -94,6 +148,9 @@
       <workItem from="1604649308414" duration="7506000" />
       <workItem from="1604716065692" duration="7437000" />
       <workItem from="1604727196400" duration="1856000" />
+      <workItem from="1604909689922" duration="172000" />
+      <workItem from="1604915293092" duration="987000" />
+      <workItem from="1604975876849" duration="7965000" />
     </task>
     <servers />
   </component>
@@ -113,42 +170,46 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="557" y="175" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1604719169501" />
+    <state x="481" y="232" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604977315610">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="481" y="232" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.960@0.0.1500.960" timestamp="1604977315610" />
     <state x="532" y="240" key="FileChooserDialogImpl" timestamp="1604726578136">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="532" y="240" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1604726578136" />
-    <state width="1460" height="433" key="GridCell.Tab.0.bottom" timestamp="1604737492503">
+    <state width="1460" height="127" key="GridCell.Tab.0.bottom" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604737492503" />
-    <state width="1460" height="433" key="GridCell.Tab.0.center" timestamp="1604737492502">
+    <state width="1460" height="127" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.0.center" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604737492502" />
-    <state width="1460" height="433" key="GridCell.Tab.0.left" timestamp="1604737492501">
+    <state width="1460" height="127" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.0.left" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604737492501" />
-    <state width="1460" height="433" key="GridCell.Tab.0.right" timestamp="1604737492502">
+    <state width="1460" height="127" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.0.right" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604737492502" />
-    <state width="1460" height="433" key="GridCell.Tab.1.bottom" timestamp="1604737492505">
+    <state width="1460" height="127" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.1.bottom" timestamp="1604987447745">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604737492505" />
-    <state width="1460" height="433" key="GridCell.Tab.1.center" timestamp="1604737492505">
+    <state width="1460" height="127" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604987447745" />
+    <state width="1460" height="127" key="GridCell.Tab.1.center" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1604737492505" />
-    <state width="1460" height="433" key="GridCell.Tab.1.left" timestamp="1604737492504">
+    <state width="1460" height="127" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.1.left" timestamp="1604987447744">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1604737492504" />
-    <state width="1460" height="433" key="GridCell.Tab.1.right" timestamp="1604737492505">
+    <state width="1460" height="127" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1604987447744" />
+    <state width="1460" height="127" key="GridCell.Tab.1.right" timestamp="1604987447745">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1460" height="433" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1604737492505" />
+    <state width="1460" height="127" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1604987447745" />
     <state x="284" y="126" key="SettingsEditor" timestamp="1604727260848">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

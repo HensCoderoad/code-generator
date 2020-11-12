@@ -1,0 +1,105 @@
+package ${package}.${moduleName}.controller;
+
+import ${package}.${moduleName}.domain.dto.${className}.${className}AddDto;
+import ${package}.${moduleName}.domain.dto.${className}.${className}EnableDto;
+import ${package}.${moduleName}.domain.dto.${className}.${className}QueryDto;
+import ${package}.${moduleName}.domain.dto.${className}.${className}UpdateDto;
+import com.jian.common.core.web.domain.AjaxResult;
+import com.jian.common.core.web.domain.RequestModel;
+import com.jian.common.core.web.page.TableDataInfo;
+import com.jian.common.log.annotation.Log;
+import com.jian.common.log.enums.BusinessType;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import javax.validation.Valid;
+
+import ${package}.${moduleName}.domain.${className};
+import ${package}.${moduleName}.service.I${className}Service;
+
+
+
+/**
+ * @author ${author}
+ * @date ${datetime}
+ * @decription ${comments} 接口类
+ */
+@RestController
+@RequestMapping("/${classname}")
+public class ${className}Controller {
+
+    @Resource
+    private I${className}Service ${classname}Service;
+
+    /**
+     * @Author ${author}
+     * @Description ${comments}列表
+     * @Date ${datetime}
+     **/
+    @PostMapping("/list")
+    @PreAuthorize(""@ss.hasPermi('${moduleName}:${className}:list\')")
+    public TableDataInfo list(@Valid @RequestBody RequestModel<${className}QueryDto> body){
+        return ${classname}Service.queryList(body);
+    }
+
+
+    /**
+     * @Author ${author}
+     * @Description 新增${comments}
+     * @Date ${datetime}
+     **/
+    @Log(title = "${comments}-添加", businessType = BusinessType.INSERT)
+    @PostMapping("/add")
+    @PreAuthorize("@ss.hasPermi('${moduleName}:${className}:add')")
+    public AjaxResult add${className}(@Valid @RequestBody RequestModel<${className}AddDto> body) {
+        return ${classname}Service.add${className}(body);
+    }
+
+    /**
+     * @Author ${author}
+     * @Description 删除${comments}
+     * @Date ${datetime}
+     **/
+    @Log(title = "${comments}-删除", businessType = BusinessType.DELETE)
+    @PostMapping("/del")
+    @PreAuthorize("@ss.hasPermi('${moduleName}:${className}:del')")
+    public AjaxResult del${className}(@Valid @RequestBody RequestModel<Long> body) {
+        return ${classname}Service.del${className}(body.getParameter());
+    }
+
+    /**
+     * @Author ${author}
+     * @Description 更新${comments}
+     * @Date ${datetime}
+     **/
+    @Log(title = "${comments}-更新", businessType = BusinessType.UPDATE)
+    @PostMapping("/update")
+    @PreAuthorize("@ss.hasPermi('${moduleName}:${className}:update')")
+    public AjaxResult updateMaintencPlan(@Valid @RequestBody RequestModel<${className}UpdateDto> body) {
+        return ${classname}Service.update${className}(body.getParameter());
+    }
+
+    /**
+     * @Author ${author}
+     * @Description ${comments}详情
+     * @Date ${datetime}
+     **/
+    @PostMapping("/detail")
+    @PreAuthorize("@ss.hasPermi('${moduleName}:${className}:detail')")
+    public AjaxResult ${classname}Detail(@Valid @RequestBody RequestModel<Long> body) {
+        return ${classname}Service.${classname}Detail(body.getParameter());
+    }
+
+    /**
+     * @Author ${author}
+     * @Description ${comments}启停
+     * @Date ${datetime}
+     **/
+    @PostMapping("/enable")
+    @PreAuthorize("@ss.hasPermi('${moduleName}:${className}:enable')")
+    public AjaxResult ${classname}Enable(@Valid @RequestBody RequestModel<${className}EnableDto> body) {
+        return ${classname}Service.${classname}Enable(body.getParameter());
+    }
+
+}

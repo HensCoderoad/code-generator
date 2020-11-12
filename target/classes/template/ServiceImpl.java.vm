@@ -1,0 +1,137 @@
+package ${package}.${moduleName}.service.impl;
+
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.transaction.annotation.Transactional;
+
+import ${package}.${moduleName}.mapper.${className}Mapper;
+import ${package}.${moduleName}.domain.${className};
+import ${package}.${moduleName}.service.I${className}Service;
+
+/**
+ * ${comments}
+ * @author ${author}
+ * @date ${datetime}
+ * @description ${comments} 实现类
+ */
+@Slf4j
+@Service
+public class ${className}ServiceImpl implements I${className}Service {
+
+    @Resource
+    private ${className}Mapper ${classname}Mapper;
+
+    @Override
+    public TableDataInfo queryList(RequestModel<${className}QueryDto> body) {
+        // TODO 这里要手动修改
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("del_flag", new Integer(0));
+        if (ObjectUtils.isNotEmpty(body.getParameter().getIsEnable())) {
+            queryWrapper.eq("is_enable", body.getParameter().getIsEnable());
+        }
+        if (ObjectUtils.isNotEmpty(body.getParameter().getBeginTime())
+                && ObjectUtils.isNotEmpty(body.getParameter().getEndTime())) {
+            queryWrapper.le("begin_time", body.getParameter().getBeginTime());
+            queryWrapper.gt("end_time", body.getParameter().getEndTime());
+        }
+        Page<${className}ListVo> page = new Page(body.getPageNum(), body.getPageSize());
+        List<${className}ListVo> ${classname}ListVos = ${classname}Mapper.queryList(page, queryWrapper);
+        return new TableDataInfo(${classname}ListVos, (int) page.getTotal());
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public AjaxResult add${className}(RequestModel<${className}AddDto> body) {
+        log.info("添加${comments}=========>parameter:{}", body.getParameter());
+        ${className} ${classname} = new ${className}();
+        BeanUtils.copyBeanProp(${classname}, body.getParameter());
+        ${classname}.setDelFlag(new Integer(0));
+        ${classname}Mapper.insert(${classname});
+        return AjaxResult.success();
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public AjaxResult update${className}(${className}UpdateDto body) {
+        log.info("更新${comments}=========>parameter:{}", body);
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("del_flag", new Integer(0));
+        #foreach ($column in $columns)
+            #if($column.columnName == $pk.columnName)
+            queryWrapper.eq("$column.columnName", body.get$column.columnName());
+            #end
+        #end
+        ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);
+        if (ObjectUtils.isEmpty(${classname})) {
+            return AjaxResult.error("查询不到数据");
+        }
+        BeanUtils.copyProperties(body, ${classname});
+        ${classname}Mapper.update(${classname}, queryWrapper);
+        return AjaxResult.success();
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public AjaxResult del${classname}(Long parameter) {
+        log.info("删除${comments}=============》id:{}", parameter);
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("del_flag", new Integer(0));
+        #foreach ($column in $columns)
+            #if($column.columnName == $pk.columnName)
+                queryWrapper.eq("$column.columnName", parameter);
+            #end
+        #end
+        ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);
+        if (ObjectUtils.isEmpty(${classname})) {
+            return AjaxResult.error("数据不存在");
+        }
+        if (${classname}.getIsEnable().equals(1)) {
+            return AjaxResult.error("计划已启用，不可删除");
+        }
+        ${classname}.setDelFlag(new Integer(2));
+        ${classname}Mapper.update(${classname}, queryWrapper);
+        return AjaxResult.success();
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public AjaxResult ${classname}Enable(${className}EnableDto body) {
+        log.info("启用 关闭 0:不启用，1：启用=============》{}", body);
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("del_flag", new Integer(0));
+        #foreach ($column in $columns)
+            #if($column.columnName == $pk.columnName)
+                queryWrapper.eq("$column.columnName", body.get$column.attrName());
+            #end
+        #end
+        ${className} ${classname} = ${classname}Mapper.selectOne(queryWrapper);
+        if (ObjectUtils.isEmpty(${classname})) {
+            return AjaxResult.error("数据不存在");
+        }
+        if (body.getIsEnable().equals(${classname}.getIsEnable())) {
+            return AjaxResult.success();
+        } else {
+            ${classname}.setIsEnable(body.getIsEnable());
+        }
+        ${classname}Mapper.update(${classname}, queryWrapper);
+        return AjaxResult.success();
+    }
+
+    @Override
+    public AjaxResult ${classname}Detail(Long parameter) {
+        log.info("${comments}查询==========>{}", parameter);
+        QueryWrapper<${className}> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("del_flag", new Integer(0));
+        #foreach ($column in $columns)
+            #if($column.columnName == $pk.columnName)
+                queryWrapper.eq("$column.columnName", parameter);
+            #end
+        #end
+        ${className}Vo ${classname}Vo = ${classname}Mapper.queryInfo(queryWrapper);
+        if (ObjectUtils.isEmpty(${classname}Vo)) {
+            return AjaxResult.error("数据不存在");
+        }
+        return AjaxResult.success(${classname}Vo);
+    }
+}

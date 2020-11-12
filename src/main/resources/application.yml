@@ -6,9 +6,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     #MySQL配置
-    url: jdbc:mysql://139.9.221.242:3306/ms_base?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT
+    url: jdbc:mysql://localhost:3306/base?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT
     username: root
-    password: q1w2e3
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   #    #oracle配置
 #        driverClassName: oracle.jdbc.OracleDriver
